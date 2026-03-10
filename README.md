@@ -20,3 +20,23 @@ python3 -m http.server 8123
 ```
 
 Luego abrir `http://127.0.0.1:8123/`.
+
+## Deploy por SSH a Hostinger
+
+Comprobacion de acceso:
+
+```bash
+./scripts/check-hostinger.sh
+```
+
+Deploy del dominio actual:
+
+```bash
+./scripts/deploy-hostinger.sh construccionesfgarcia.es
+```
+
+Dry run:
+
+```bash
+./scripts/deploy-hostinger.sh construccionesfgarcia.es . --dry-run
+```
