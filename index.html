@@ -6,6 +6,7 @@
   <title>Construcciones F. Garcia | Calidad y Compromiso</title>
   <meta name="description" content="Empresa de construccion y reformas en Betanzos y A Coruna. Obra nueva, reformas integrales y obra civil con experiencia, calidad y compromiso.">
   <meta name="theme-color" content="#1e293b">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,7 +67,7 @@
   <nav id="navbar" class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300">
     <div class="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
       <a href="#inicio" class="flex items-center gap-3">
-        <img src="assets/logo-azul.svg" alt="Construcciones F. Garcia" class="h-14 w-auto">
+        <img src="assets/logo-azul.png" alt="Construcciones F. Garcia" class="h-16 w-auto">
       </a>
 
       <div class="hidden items-center gap-8 md:flex">
@@ -353,7 +354,7 @@
   <footer class="bg-slate-950 py-14 text-white">
     <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
       <div>
-        <img src="assets/logo-blanco.svg" alt="Construcciones F. Garcia" class="h-14 w-auto">
+        <img src="assets/logo-blanco.png" alt="Construcciones F. Garcia" class="h-16 w-auto">
         <p class="mt-5 max-w-sm text-slate-400">Comprometidos con la calidad en cada obra y con una forma de trabajar clara, directa y responsable.</p>
       </div>
       <div>
@@ -428,31 +429,20 @@
     const modalCounter = document.getElementById("modal-counter");
     const prevBtn = document.getElementById("prev-btn");
     const nextBtn = document.getElementById("next-btn");
+    function buildGallery(category, count) {
+      return Array.from({ length: count }, (_, index) => {
+        const number = String(index + 1).padStart(3, "0");
+        return `assets/gallery/${category}/${number}.jpg`;
+      });
+    }
+
     const galleries = {
-      "obra-nueva": [
-        "assets/gallery/obra-nueva/01.jpg",
-        "assets/gallery/obra-nueva/02.jpg"
-      ],
-      "obra-civil": [
-        "assets/gallery/obra-civil/01.jpg",
-        "assets/gallery/obra-civil/02.jpg"
-      ],
-      "obra-moderna": [
-        "assets/gallery/obra-moderna/01.jpg",
-        "assets/gallery/obra-moderna/02.jpg"
-      ],
-      "obra-exterior": [
-        "assets/gallery/obra-exterior/01.jpg",
-        "assets/gallery/obra-exterior/02.jpg"
-      ],
-      "obra-interior": [
-        "assets/gallery/obra-interior/01.jpg",
-        "assets/gallery/obra-interior/02.jpg"
-      ],
-      "obra-rustica": [
-        "assets/gallery/obra-rustica/01.jpg",
-        "assets/gallery/obra-rustica/02.jpg"
-      ]
+      "obra-nueva": buildGallery("obra-nueva", 8),
+      "obra-civil": buildGallery("obra-civil", 26),
+      "obra-moderna": buildGallery("obra-moderna", 80),
+      "obra-exterior": buildGallery("obra-exterior", 177),
+      "obra-interior": buildGallery("obra-interior", 84),
+      "obra-rustica": buildGallery("obra-rustica", 103)
     };
     let currentGallery = [];
     let currentIndex = 0;
