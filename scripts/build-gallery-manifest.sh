@@ -4,12 +4,12 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 GALLERY_DIR="$ROOT_DIR/assets/gallery"
-OUTPUT_FILE="$GALLERY_DIR/manifest.json"
+OUTPUT_FILE="$GALLERY_DIR/manifest.js"
 
 tmp_file="$(mktemp)"
 
 {
-  echo "{"
+  echo "window.GALLERY_MANIFEST = {"
   first_category=1
 
   find "$GALLERY_DIR" -mindepth 1 -maxdepth 1 -type d | sort | while read -r category_dir; do

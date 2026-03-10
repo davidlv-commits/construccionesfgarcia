@@ -43,7 +43,7 @@ Dry run:
 
 ## Galeria
 
-La galeria carga sus imagenes desde `assets/gallery/manifest.json`.
+La galeria carga sus imagenes desde `assets/gallery/manifest.js`.
 
 Si se anaden o quitan imagenes dentro de `assets/gallery/<categoria>/`, regenerar el manifest:
 
