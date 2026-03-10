@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Construcciones F. Garcia | Calidad y Compromiso</title>
+  <meta name="description" content="Empresa de construccion y reformas en Betanzos y A Coruna. Obra nueva, reformas integrales y obra civil con experiencia, calidad y compromiso.">
+  <meta name="theme-color" content="#1e293b">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "garcia-blue": "#1e293b",
+            "garcia-blue-soft": "#334155",
+            "garcia-orange": "#f97316",
+            "garcia-sand": "#f8fafc"
+          },
+          fontFamily: {
+            sans: ["Roboto", "sans-serif"],
+            heading: ["Montserrat", "sans-serif"]
+          },
+          boxShadow: {
+            floating: "0 24px 80px rgba(15, 23, 42, 0.18)"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #ffffff; color: #334155; }
+    .hero-bg {
+      background-image:
+        linear-gradient(120deg, rgba(15, 23, 42, 0.84), rgba(30, 41, 59, 0.68)),
+        url("assets/hero-construction.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+    .glass {
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.9);
+    }
+    .card-lift { transition: transform 0.28s ease, box-shadow 0.28s ease; }
+    .card-lift:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.14);
+    }
+    .modal {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased">
+  <nav id="navbar" class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300">
+    <div class="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="#inicio" class="flex items-center gap-3">
+        <img src="assets/logo-azul.svg" alt="Construcciones F. Garcia" class="h-14 w-auto">
+      </a>
+
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="#inicio" class="font-bold text-slate-600 transition hover:text-garcia-blue">Inicio</a>
+        <a href="#servicios" class="font-bold text-slate-600 transition hover:text-garcia-blue">Servicios</a>
+        <a href="#proyectos" class="font-bold text-slate-600 transition hover:text-garcia-blue">Proyectos</a>
+        <a href="#nosotros" class="font-bold text-slate-600 transition hover:text-garcia-blue">Nosotros</a>
+        <a href="#contacto" class="rounded-full bg-garcia-orange px-5 py-3 font-bold text-white shadow-lg transition hover:bg-orange-600">Pedir presupuesto</a>
+      </div>
+
+      <button id="mobile-menu-btn" class="text-3xl text-garcia-blue md:hidden" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="glass hidden border-t border-slate-200 md:hidden">
+      <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6">
+        <a href="#inicio" class="rounded-lg px-3 py-3 font-medium text-slate-700 hover:bg-slate-50">Inicio</a>
+        <a href="#servicios" class="rounded-lg px-3 py-3 font-medium text-slate-700 hover:bg-slate-50">Servicios</a>
+        <a href="#proyectos" class="rounded-lg px-3 py-3 font-medium text-slate-700 hover:bg-slate-50">Proyectos</a>
+        <a href="#nosotros" class="rounded-lg px-3 py-3 font-medium text-slate-700 hover:bg-slate-50">Nosotros</a>
+        <a href="#contacto" class="rounded-lg px-3 py-3 font-bold text-garcia-orange hover:bg-orange-50">Pedir presupuesto</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="inicio" class="hero-bg relative flex min-h-screen items-center justify-center overflow-hidden pt-24">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-950/30"></div>
+      <div class="relative z-10 mx-auto flex max-w-7xl flex-col gap-10 px-4 py-20 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8">
+        <div class="max-w-3xl">
+          <p class="mb-6 inline-flex rounded-full bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.24em] text-orange-200 ring-1 ring-white/20">
+            Construccion y reformas en Betanzos y A Coruna
+          </p>
+          <h1 class="font-heading text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-7xl">
+            Construimos con criterio.
+            <span class="block text-orange-300">Reformamos con detalle.</span>
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg text-slate-200 sm:text-xl">
+            Obra nueva, reformas integrales y obra civil con un enfoque claro: calidad real, plazos serios y una ejecucion cuidada de principio a fin.
+          </p>
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a href="#contacto" class="rounded-full bg-garcia-orange px-8 py-4 text-center font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-orange-600">
+              Solicitar presupuesto
+            </a>
+            <a href="#proyectos" class="rounded-full border-2 border-white/80 px-8 py-4 text-center font-bold text-white transition hover:bg-white hover:text-garcia-blue">
+              Ver trabajos
+            </a>
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-3 lg:max-w-xl">
+          <div class="glass rounded-3xl p-5 shadow-floating">
+            <p class="text-3xl font-extrabold text-garcia-blue">20+</p>
+            <p class="mt-2 text-sm font-medium text-slate-600">anos de experiencia en obra, rehabilitacion y reforma.</p>
+          </div>
+          <div class="glass rounded-3xl p-5 shadow-floating">
+            <p class="text-3xl font-extrabold text-garcia-blue">360°</p>
+            <p class="mt-2 text-sm font-medium text-slate-600">Gestion integral del proyecto, de la idea a la entrega.</p>
+          </div>
+          <div class="glass rounded-3xl p-5 shadow-floating">
+            <p class="text-3xl font-extrabold text-garcia-blue">100%</p>
+            <p class="mt-2 text-sm font-medium text-slate-600">Presupuesto claro y acompanamiento cercano.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative z-10 -mt-16 px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto grid max-w-7xl gap-6 md:grid-cols-3">
+        <article class="card-lift rounded-3xl border border-slate-100 bg-white p-8 shadow-floating">
+          <div class="mb-4 text-4xl text-garcia-orange"><i class="fa-solid fa-award"></i></div>
+          <h2 class="font-heading text-2xl font-bold text-garcia-blue">Calidad garantizada</h2>
+          <p class="mt-3 text-slate-600">Materiales fiables, ejecucion cuidada y soluciones pensadas para durar.</p>
+        </article>
+        <article class="card-lift rounded-3xl border border-slate-100 bg-white p-8 shadow-floating">
+          <div class="mb-4 text-4xl text-garcia-blue"><i class="fa-solid fa-clock"></i></div>
+          <h2 class="font-heading text-2xl font-bold text-garcia-blue">Compromiso con plazos</h2>
+          <p class="mt-3 text-slate-600">Planificacion realista, seguimiento constante y comunicacion directa durante toda la obra.</p>
+        </article>
+        <article class="card-lift rounded-3xl border border-slate-100 bg-white p-8 shadow-floating">
+          <div class="mb-4 text-4xl text-garcia-orange"><i class="fa-solid fa-euro-sign"></i></div>
+          <h2 class="font-heading text-2xl font-bold text-garcia-blue">Presupuestos claros</h2>
+          <p class="mt-3 text-slate-600">Sin ambiguedades ni sobrecostes opacos. Lo importante queda definido desde el inicio.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="servicios" class="bg-slate-50 py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto mb-14 max-w-3xl text-center">
+          <p class="font-bold uppercase tracking-[0.24em] text-garcia-orange">Servicios</p>
+          <h2 class="font-heading mt-4 text-3xl font-extrabold text-garcia-blue sm:text-5xl">Soluciones de construccion pensadas para ejecutarse bien</h2>
+          <p class="mt-4 text-lg text-slate-600">Trabajamos tanto en obra nueva como en reforma y actuaciones exteriores, con un enfoque tecnico y practico.</p>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <article class="card-lift overflow-hidden rounded-3xl bg-white shadow-lg">
+            <img src="assets/obra-nueva.jpg" alt="Obra nueva" class="h-56 w-full object-cover">
+            <div class="p-7">
+              <h3 class="font-heading text-2xl font-bold text-garcia-blue">Obra nueva</h3>
+              <p class="mt-3 text-slate-600">Construccion integral de viviendas y edificios con coordinacion de tajos y acabados controlados.</p>
+            </div>
+          </article>
+          <article class="card-lift overflow-hidden rounded-3xl bg-white shadow-lg">
+            <img src="assets/obra-interior.jpg" alt="Reformas integrales" class="h-56 w-full object-cover">
+            <div class="p-7">
+              <h3 class="font-heading text-2xl font-bold text-garcia-blue">Reformas integrales</h3>
+              <p class="mt-3 text-slate-600">Redistribucion, cocinas, banos, carpinteria, revestimientos y mejora funcional del espacio.</p>
+            </div>
+          </article>
+          <article class="card-lift overflow-hidden rounded-3xl bg-white shadow-lg">
+            <img src="assets/obra-civil.jpg" alt="Obra civil" class="h-56 w-full object-cover">
+            <div class="p-7">
+              <h3 class="font-heading text-2xl font-bold text-garcia-blue">Obra civil</h3>
+              <p class="mt-3 text-slate-600">Urbanizacion, pavimentacion, muros y trabajos exteriores con criterio estructural y durabilidad.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros" class="bg-white py-24">
+      <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+        <div class="relative">
+          <div class="absolute -left-5 -top-5 h-24 w-24 rounded-3xl bg-orange-200"></div>
+          <div class="absolute -bottom-5 -right-5 h-24 w-24 rounded-3xl bg-slate-200"></div>
+          <img src="assets/equipo.jpg" alt="Equipo de construccion" class="relative z-10 w-full rounded-[2rem] object-cover shadow-floating">
+        </div>
+        <div class="flex flex-col justify-center">
+          <p class="font-bold uppercase tracking-[0.24em] text-garcia-orange">Sobre nosotros</p>
+          <h2 class="font-heading mt-4 text-3xl font-extrabold text-garcia-blue sm:text-5xl">Experiencia, cercania y oficio</h2>
+          <p class="mt-6 text-lg leading-8 text-slate-600">
+            En Construcciones F. Garcia trabajamos desde Betanzos para clientes que buscan una ejecucion seria y una relacion directa con quien lleva la obra. Combinamos experiencia de campo, materiales adecuados y una forma de trabajar ordenada.
+          </p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            <div class="flex items-center gap-3 rounded-2xl bg-slate-50 px-4 py-4">
+              <i class="fa-solid fa-check text-garcia-orange"></i>
+              <span class="font-semibold text-garcia-blue">Equipo cualificado</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-2xl bg-slate-50 px-4 py-4">
+              <i class="fa-solid fa-check text-garcia-orange"></i>
+              <span class="font-semibold text-garcia-blue">Materiales de confianza</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-2xl bg-slate-50 px-4 py-4">
+              <i class="fa-solid fa-check text-garcia-orange"></i>
+              <span class="font-semibold text-garcia-blue">Seguimiento personalizado</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-2xl bg-slate-50 px-4 py-4">
+              <i class="fa-solid fa-check text-garcia-orange"></i>
+              <span class="font-semibold text-garcia-blue">Compromiso post-obra</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos" class="bg-garcia-blue py-24 text-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto mb-14 max-w-3xl text-center">
+          <p class="font-bold uppercase tracking-[0.24em] text-orange-300">Portafolio</p>
+          <h2 class="font-heading mt-4 text-3xl font-extrabold sm:text-5xl">Categorias de proyectos</h2>
+          <p class="mt-4 text-lg text-slate-300">La galeria ya no depende de PHP ni de carpetas ocultas en el servidor. Cada categoria abre con recursos estaticos locales.</p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <button class="group overflow-hidden rounded-3xl bg-white/5 text-left ring-1 ring-white/10 transition hover:-translate-y-1 hover:ring-orange-300/60" data-gallery="obra-nueva" data-title="Obra nueva">
+            <img src="assets/obra-nueva.jpg" alt="Categoria obra nueva" class="h-72 w-full object-cover transition duration-500 group-hover:scale-105">
+            <span class="block p-6">
+              <span class="font-heading text-2xl font-bold">Obra nueva</span>
+              <span class="mt-2 block text-sm uppercase tracking-[0.22em] text-orange-300">Ver galeria</span>
+            </span>
+          </button>
+          <button class="group overflow-hidden rounded-3xl bg-white/5 text-left ring-1 ring-white/10 transition hover:-translate-y-1 hover:ring-orange-300/60" data-gallery="obra-civil" data-title="Obra civil">
+            <img src="assets/obra-civil.jpg" alt="Categoria obra civil" class="h-72 w-full object-cover transition duration-500 group-hover:scale-105">
+            <span class="block p-6">
+              <span class="font-heading text-2xl font-bold">Obra civil</span>
+              <span class="mt-2 block text-sm uppercase tracking-[0.22em] text-orange-300">Ver galeria</span>
+            </span>
+          </button>
+          <button class="group overflow-hidden rounded-3xl bg-white/5 text-left ring-1 ring-white/10 transition hover:-translate-y-1 hover:ring-orange-300/60" data-gallery="obra-moderna" data-title="Obra moderna">
+            <img src="assets/obra-moderna.jpg" alt="Categoria obra moderna" class="h-72 w-full object-cover transition duration-500 group-hover:scale-105">
+            <span class="block p-6">
+              <span class="font-heading text-2xl font-bold">Obra moderna</span>
+              <span class="mt-2 block text-sm uppercase tracking-[0.22em] text-orange-300">Ver galeria</span>
+            </span>
+          </button>
+          <button class="group overflow-hidden rounded-3xl bg-white/5 text-left ring-1 ring-white/10 transition hover:-translate-y-1 hover:ring-orange-300/60" data-gallery="obra-exterior" data-title="Obra exterior">
+            <img src="assets/obra-exterior.jpg" alt="Categoria obra exterior" class="h-72 w-full object-cover transition duration-500 group-hover:scale-105">
+            <span class="block p-6">
+              <span class="font-heading text-2xl font-bold">Obra exterior</span>
+              <span class="mt-2 block text-sm uppercase tracking-[0.22em] text-orange-300">Ver galeria</span>
+            </span>
+          </button>
+          <button class="group overflow-hidden rounded-3xl bg-white/5 text-left ring-1 ring-white/10 transition hover:-translate-y-1 hover:ring-orange-300/60" data-gallery="obra-interior" data-title="Obra interior">
+            <img src="assets/obra-interior.jpg" alt="Categoria obra interior" class="h-72 w-full object-cover transition duration-500 group-hover:scale-105">
+            <span class="block p-6">
+              <span class="font-heading text-2xl font-bold">Obra interior</span>
+              <span class="mt-2 block text-sm uppercase tracking-[0.22em] text-orange-300">Ver galeria</span>
+            </span>
+          </button>
+          <button class="group overflow-hidden rounded-3xl bg-white/5 text-left ring-1 ring-white/10 transition hover:-translate-y-1 hover:ring-orange-300/60" data-gallery="obra-rustica" data-title="Obra rustica">
+            <img src="assets/obra-rustica.jpg" alt="Categoria obra rustica" class="h-72 w-full object-cover transition duration-500 group-hover:scale-105">
+            <span class="block p-6">
+              <span class="font-heading text-2xl font-bold">Obra rustica</span>
+              <span class="mt-2 block text-sm uppercase tracking-[0.22em] text-orange-300">Ver galeria</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-garcia-orange py-16">
+      <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+        <h2 class="font-heading text-3xl font-extrabold text-white sm:text-4xl">Si tienes una obra en mente, conviene definirla bien desde el principio</h2>
+        <p class="mx-auto mt-4 max-w-3xl text-lg text-orange-100">Cuanto antes revisemos alcance, tiempos y condicionantes, antes podremos darte una propuesta seria y ajustada.</p>
+        <a href="tel:+34981772171" class="mt-8 inline-flex items-center justify-center rounded-full bg-white px-8 py-4 font-bold text-garcia-orange transition hover:bg-slate-100">
+          <i class="fa-solid fa-phone mr-3"></i> Llamar al 981 77 21 71
+        </a>
+      </div>
+    </section>
+
+    <section id="contacto" class="bg-slate-50 py-24">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+        <div>
+          <p class="font-bold uppercase tracking-[0.24em] text-garcia-orange">Contacto</p>
+          <h2 class="font-heading mt-4 text-3xl font-extrabold text-garcia-blue sm:text-5xl">Hablemos de tu proyecto</h2>
+          <p class="mt-5 max-w-xl text-lg text-slate-600">Puedes escribirnos o llamarnos para revisar tu obra, reforma o necesidad concreta. La informacion visible queda integrada tambien en esta copia recuperada.</p>
+
+          <div class="mt-10 space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-garcia-blue text-white"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <h3 class="font-heading text-xl font-bold text-garcia-blue">Ubicacion</h3>
+                <p class="mt-1 text-slate-600">Lugar Infesta, A Fraga 47<br>Requian, 15300 Betanzos - A Coruna</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-garcia-blue text-white"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <h3 class="font-heading text-xl font-bold text-garcia-blue">Email</h3>
+                <p class="mt-1 text-slate-600">info@construccionesfgarcia.es</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-garcia-blue text-white"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <h3 class="font-heading text-xl font-bold text-garcia-blue">Telefonos</h3>
+                <p class="mt-1 text-slate-600">+34 981 77 21 71</p>
+                <p class="text-slate-600">+34 681 77 21 71</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-[2rem] bg-white p-8 shadow-floating ring-1 ring-slate-100">
+          <form id="contact-form" class="space-y-6">
+            <div class="grid gap-6 md:grid-cols-2">
+              <label class="block">
+                <span class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-slate-500">Nombre</span>
+                <input type="text" required class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-garcia-orange focus:bg-white">
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-slate-500">Telefono</span>
+                <input type="tel" required class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-garcia-orange focus:bg-white">
+              </label>
+            </div>
+            <label class="block">
+              <span class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-slate-500">Email</span>
+              <input type="email" required class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-garcia-orange focus:bg-white">
+            </label>
+            <label class="block">
+              <span class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-slate-500">Mensaje</span>
+              <textarea required rows="6" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:border-garcia-orange focus:bg-white"></textarea>
+            </label>
+            <button type="submit" class="w-full rounded-full bg-garcia-blue px-6 py-4 font-bold text-white transition hover:bg-slate-800">Enviar consulta</button>
+            <p id="form-feedback" class="hidden rounded-2xl bg-orange-50 px-4 py-3 text-sm font-medium text-orange-700"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 py-14 text-white">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
+      <div>
+        <img src="assets/logo-blanco.svg" alt="Construcciones F. Garcia" class="h-14 w-auto">
+        <p class="mt-5 max-w-sm text-slate-400">Comprometidos con la calidad en cada obra y con una forma de trabajar clara, directa y responsable.</p>
+      </div>
+      <div>
+        <h3 class="font-heading text-lg font-bold text-orange-300">Enlaces</h3>
+        <div class="mt-4 flex flex-col gap-3 text-slate-400">
+          <a href="#inicio" class="transition hover:text-white">Inicio</a>
+          <a href="#servicios" class="transition hover:text-white">Servicios</a>
+          <a href="#proyectos" class="transition hover:text-white">Proyectos</a>
+          <a href="#contacto" class="transition hover:text-white">Contacto</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-heading text-lg font-bold text-orange-300">Contacto directo</h3>
+        <div class="mt-4 space-y-3 text-slate-400">
+          <p>info@construccionesfgarcia.es</p>
+          <p>+34 981 77 21 71</p>
+          <p>Betanzos, A Coruna</p>
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto mt-10 max-w-7xl border-t border-slate-800 px-4 pt-6 text-sm text-slate-500 sm:px-6 lg:px-8">
+      <p>&copy; 2026 Construcciones F. Garcia. Sitio estatico recuperado y estabilizado.</p>
+    </div>
+  </footer>
+
+  <div id="gallery-modal" class="modal fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/90 p-4">
+    <div class="absolute inset-0" data-close-modal></div>
+    <div class="relative z-10 w-full max-w-5xl rounded-[2rem] bg-slate-900 p-4 text-white shadow-2xl sm:p-6">
+      <button class="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-xl transition hover:bg-white/20" data-close-modal aria-label="Cerrar galeria">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h3 id="modal-title" class="pr-14 font-heading text-2xl font-bold sm:text-3xl"></h3>
+      <div class="mt-5 overflow-hidden rounded-[1.5rem] bg-slate-800">
+        <img id="modal-image" src="" alt="" class="h-[32rem] w-full object-cover max-sm:h-72">
+      </div>
+      <div class="mt-5 flex items-center justify-between gap-4">
+        <button id="prev-btn" class="rounded-full border border-white/20 px-5 py-3 font-bold transition hover:bg-white/10">
+          <i class="fa-solid fa-chevron-left mr-2"></i>Anterior
+        </button>
+        <p id="modal-counter" class="text-sm font-medium uppercase tracking-[0.2em] text-slate-300"></p>
+        <button id="next-btn" class="rounded-full border border-white/20 px-5 py-3 font-bold transition hover:bg-white/10">
+          Siguiente<i class="fa-solid fa-chevron-right ml-2"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const navbar = document.getElementById("navbar");
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+    });
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 12) {
+        navbar.classList.add("glass", "shadow-lg", "border-slate-200");
+      } else {
+        navbar.classList.remove("glass", "shadow-lg", "border-slate-200");
+      }
+    });
+
+    const galleries = {
+      "obra-nueva": [
+        "assets/gallery/obra-nueva/01.jpg",
+        "assets/gallery/obra-nueva/02.jpg"
+      ],
+      "obra-civil": [
+        "assets/gallery/obra-civil/01.jpg",
+        "assets/gallery/obra-civil/02.jpg"
+      ],
+      "obra-moderna": [
+        "assets/gallery/obra-moderna/01.jpg",
+        "assets/gallery/obra-moderna/02.jpg"
+      ],
+      "obra-exterior": [
+        "assets/gallery/obra-exterior/01.jpg",
+        "assets/gallery/obra-exterior/02.jpg"
+      ],
+      "obra-interior": [
+        "assets/gallery/obra-interior/01.jpg",
+        "assets/gallery/obra-interior/02.jpg"
+      ],
+      "obra-rustica": [
+        "assets/gallery/obra-rustica/01.jpg",
+        "assets/gallery/obra-rustica/02.jpg"
+      ]
+    };
+
+    const modal = document.getElementById("gallery-modal");
+    const modalTitle = document.getElementById("modal-title");
+    const modalImage = document.getElementById("modal-image");
+    const modalCounter = document.getElementById("modal-counter");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    let currentGallery = [];
+    let currentIndex = 0;
+
+    function renderModalImage() {
+      modalImage.src = currentGallery[currentIndex];
+      modalCounter.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
+      prevBtn.disabled = currentGallery.length <= 1;
+      nextBtn.disabled = currentGallery.length <= 1;
+    }
+
+    function openGallery(title, key) {
+      currentGallery = galleries[key] || [];
+      currentIndex = 0;
+      if (!currentGallery.length) return;
+      modalTitle.textContent = title;
+      renderModalImage();
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeGallery() {
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll("[data-gallery]").forEach((button) => {
+      button.addEventListener("click", () => {
+        openGallery(button.dataset.title, button.dataset.gallery);
+      });
+    });
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+      renderModalImage();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % currentGallery.length;
+      renderModalImage();
+    });
+
+    document.querySelectorAll("[data-close-modal]").forEach((node) => {
+      node.addEventListener("click", closeGallery);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (!modal.classList.contains("active")) return;
+      if (event.key === "Escape") closeGallery();
+      if (event.key === "ArrowLeft") prevBtn.click();
+      if (event.key === "ArrowRight") nextBtn.click();
+    });
+
+    const form = document.getElementById("contact-form");
+    const feedback = document.getElementById("form-feedback");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      feedback.textContent = "Formulario de muestra activo. Falta conectarlo a un servicio real de envio para produccion.";
+      feedback.classList.remove("hidden");
+      form.reset();
+    });
+  </script>
+</body>
+</html>

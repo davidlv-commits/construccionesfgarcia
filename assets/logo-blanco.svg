@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 140" role="img" aria-labelledby="title desc">
+  <title id="title">Construcciones F. Garcia</title>
+  <desc id="desc">Logotipo blanco con isotipo geometrico y texto</desc>
+  <rect width="680" height="140" fill="none"/>
+  <g transform="translate(8 10)">
+    <rect x="0" y="12" width="76" height="92" rx="16" fill="#ffffff"/>
+    <path d="M18 82 38 36l20 46" fill="none" stroke="#f97316" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M50 66h14v18" fill="none" stroke="#1e293b" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g fill="#ffffff" font-family="Montserrat, Arial, sans-serif">
+    <text x="108" y="60" font-size="34" font-weight="800" letter-spacing="1.4">CONSTRUCCIONES</text>
+    <text x="108" y="104" font-size="42" font-weight="700">F. GARCIA</text>
+  </g>
+</svg>
