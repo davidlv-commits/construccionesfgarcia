@@ -40,13 +40,3 @@ Dry run:
 ```bash
 ./scripts/deploy-hostinger.sh construccionesfgarcia.es . --dry-run
 ```
-
-## Galeria
-
-La galeria carga sus imagenes desde `assets/gallery/manifest.js`.
-
-Si se anaden o quitan imagenes dentro de `assets/gallery/<categoria>/`, regenerar el manifest:
-
-```bash
-./scripts/build-gallery-manifest.sh
-```

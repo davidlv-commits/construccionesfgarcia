@@ -11,7 +11,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="assets/gallery/manifest.js"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -429,7 +428,32 @@
     const modalCounter = document.getElementById("modal-counter");
     const prevBtn = document.getElementById("prev-btn");
     const nextBtn = document.getElementById("next-btn");
-    let galleries = window.GALLERY_MANIFEST || {};
+    const galleries = {
+      "obra-nueva": [
+        "assets/gallery/obra-nueva/01.jpg",
+        "assets/gallery/obra-nueva/02.jpg"
+      ],
+      "obra-civil": [
+        "assets/gallery/obra-civil/01.jpg",
+        "assets/gallery/obra-civil/02.jpg"
+      ],
+      "obra-moderna": [
+        "assets/gallery/obra-moderna/01.jpg",
+        "assets/gallery/obra-moderna/02.jpg"
+      ],
+      "obra-exterior": [
+        "assets/gallery/obra-exterior/01.jpg",
+        "assets/gallery/obra-exterior/02.jpg"
+      ],
+      "obra-interior": [
+        "assets/gallery/obra-interior/01.jpg",
+        "assets/gallery/obra-interior/02.jpg"
+      ],
+      "obra-rustica": [
+        "assets/gallery/obra-rustica/01.jpg",
+        "assets/gallery/obra-rustica/02.jpg"
+      ]
+    };
     let currentGallery = [];
     let currentIndex = 0;
 
