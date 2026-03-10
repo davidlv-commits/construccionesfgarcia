@@ -422,39 +422,13 @@
       }
     });
 
-    const galleries = {
-      "obra-nueva": [
-        "assets/gallery/obra-nueva/01.jpg",
-        "assets/gallery/obra-nueva/02.jpg"
-      ],
-      "obra-civil": [
-        "assets/gallery/obra-civil/01.jpg",
-        "assets/gallery/obra-civil/02.jpg"
-      ],
-      "obra-moderna": [
-        "assets/gallery/obra-moderna/01.jpg",
-        "assets/gallery/obra-moderna/02.jpg"
-      ],
-      "obra-exterior": [
-        "assets/gallery/obra-exterior/01.jpg",
-        "assets/gallery/obra-exterior/02.jpg"
-      ],
-      "obra-interior": [
-        "assets/gallery/obra-interior/01.jpg",
-        "assets/gallery/obra-interior/02.jpg"
-      ],
-      "obra-rustica": [
-        "assets/gallery/obra-rustica/01.jpg",
-        "assets/gallery/obra-rustica/02.jpg"
-      ]
-    };
-
     const modal = document.getElementById("gallery-modal");
     const modalTitle = document.getElementById("modal-title");
     const modalImage = document.getElementById("modal-image");
     const modalCounter = document.getElementById("modal-counter");
     const prevBtn = document.getElementById("prev-btn");
     const nextBtn = document.getElementById("next-btn");
+    let galleries = {};
     let currentGallery = [];
     let currentIndex = 0;
 
@@ -480,11 +454,19 @@
       document.body.style.overflow = "";
     }
 
-    document.querySelectorAll("[data-gallery]").forEach((button) => {
-      button.addEventListener("click", () => {
-        openGallery(button.dataset.title, button.dataset.gallery);
+    fetch("assets/gallery/manifest.json")
+      .then((response) => response.json())
+      .then((data) => {
+        galleries = data;
+        document.querySelectorAll("[data-gallery]").forEach((button) => {
+          button.addEventListener("click", () => {
+            openGallery(button.dataset.title, button.dataset.gallery);
+          });
+        });
+      })
+      .catch(() => {
+        galleries = {};
       });
-    });
 
     prevBtn.addEventListener("click", () => {
       currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
